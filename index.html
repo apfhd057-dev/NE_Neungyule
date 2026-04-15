@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NE 능률</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/menu.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header_in">
+                <div class="center_group">
+                    <h1 class="logo"><a href="#"><img src="./images/로고.png" alt="로고이미지"></a></h1>
+                    <nav id="nav">
+                        <ul>
+                            <li>
+                                <a href="./sub1.html">기업소개</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">출판 교재</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">교육서비스</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">선생님지원</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">홍보센터</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <ul class="info_mn">
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">IR</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+                <div class="hamburger_btn">
+                    <img src="./images/hamburger.png" alt="">
+                </div>
+            </div>
+            <div class="submn_area">
+            </div>
+        </header>
+        <main id="main">
+                <div class="main_box"></div>
+                <ul class="main_img">
+                    <li><a href=""><img src="./images/main_img.png" alt="" srcset=""></a></li>
+                    <li><a href=""><img src="./images/main_img2.png" alt="" srcset=""></a></li>
+                </ul>
+                <ul class="btn">
+                    <li class="on"><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+        </main>
+        <section id="contents">
+            <article id="history">
+                <div class="h_section">
+                    <div class="section_title">
+                        <p>About NE</p>
+                        <h4>NE능률이 제안하는 <span>교육의 확신</span></h4>
+                    </div>
+                    <div class="section_contents">
+                        <div class="contents_l">
+                            <h2><span>46</span>년의 역사</h2>
+                            <P>오랜 시간 쌓아온 교육 전문성은<br>
+                                오늘의 <b>NE능률</b>을 만들었습니다.</P>
+                        </div>
+                        <div class="contents_r">
+                            <img src="./images/history.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                 <p class="bottom_text">EDUCATION INNOVATION EDUCATION INNOVATION EDUCATION INNOVATION</p>
+            </article>
+            <article id="publish">
+    <div class="p_section">
+        <div class="section_title">
+            <p>Learning Contents</p>
+            <h4>학습 <span>도서</span></h4>
+        </div>
+
+        <div class="category">
+            <button type="button" class="active" data-tab="all">전체</button>
+            <button type="button" data-tab="elementary">초등학생</button>
+            <button type="button" data-tab="middle">중학생</button>
+            <button type="button" data-tab="high">고등학생</button>
+            <button type="button" data-tab="etc">기타</button>
+        </div>
+    </div>
+
+    <div class="books_wrap">
+        <div class="slide_inner">
+            <!-- 왼쪽 대표 책 + 가운데 설명 -->
+            <div class="book_main">
+                <div class="book_thumb">
+                    <img id="mainBookImg" src="./images/book1.png" alt="초등 영어문법책">
+                </div>
+
+                <div class="book_info">
+                    <h3 id="mainBookTitle">초등 영어문법책</h3>
+                    <p class="b_txt" id="mainBookDesc">초등학생용 영어 문법 학습서입니다.</p>
+
+                    <p class="price">
+                        <span class="discount" id="mainBookDiscount">10%</span>
+                        <span class="sale" id="mainBookSale">14,400원</span>
+                        <del class="original" id="mainBookOriginal">16,000원</del>
+                    </p>
+
+                    <div class="go_btn">
+                        <a id="mainBookLink" href="#">
+                            <span>바로가기</span>
+                            <img src="./images/Vector.png" alt="화살표">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오른쪽 미리보기 -->
+            <div class="book_preview" id="previewList"></div>
+        </div>
+    </div>
+</article>
+            <article id="solution">
+                    <div class="inner">
+                        <div class="section_title">
+                            <p>Education Services</p>
+                            <h4>NE능률 <span>교육 솔루션</span></h4>
+                        </div>
+                        <div class="s_inner">
+                            <div class="s_inner_l">
+                                <div class="visual">
+                                    <span class="bg_text">SOLUTION</span>
+                                    <div class="red_circle"></div>
+                                    <div class="main_circle"><img src="./images/soution_img1.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="s_inner_r">
+                                <div class="r_text">
+                                    <div class="category">
+                                        <button>영유아</button>
+                                        <button>초ㆍ중ㆍ고</button>
+                                    </div>
+                                    <span>#놀이형 콘텐츠 #월령 맞춤 설계</span>
+                                    <h4>아이 챌린지</h4>
+                                    <p>영유아 월령 발달에 맞춰 바른 습관을 길러주는<br>
+                                        홈스쿨 프로그램</p>
+                                    <div class="c_box">
+                                        <a href="#">
+                                            바로가기
+                                            <img src="./images/Vector.png" alt="화살표">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slide_r">
+                                    <div class="slide_btn">
+                                        <button></button>
+                                        <button></button>
+                                        <button></button>
+                                        <button></button>
+                                    </div>
+                                    <div class="slide_count">
+                                        <button class="prev">&lt;</button>
+                                        <span class="current">01</span>
+                                        <span class="slash">/</span>
+                                        <span class="total">07</span>
+                                        <button class="next">&gt;</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+            </article>
+                <article id="teacher">
+                    <div class="t_section">
+                        <div class="section_title">
+                            <p>Education Services</p>
+                            <h4>NE능률 <span>교육 솔루션</span></h4>
+                        </div>
+                        <div class="t_con">
+                            <img src="./images/teacher_img1.png" alt="선생님이미지">
+                            <div class="t_text">
+                                <div class="red_btn"><a href="#">NE Tutor</a></div>
+                                <p>수업 준비부터 문제 출제까지, 선생님을 위한 모든 솔루션</p>
+                                <span>#교재별 부가자료 #스마트 e-book #어휘 문제 마법사</span>
+                                <div class="t_box">
+                                    <a href="#">
+                                        바로가기
+                                        <img src="./images/Vector.png" alt="화살표">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b_con">
+                            <div class="b_text">
+                                <div class="red_btn"><a href="#">NELT</a></div>
+                                <p>데이터로 증명하는 가장 객관적인 실력 분석 서비스</p>
+                                <span>#KATE 공식인증 #영역별 정밀진단 #맞춤형 학습처방</span>
+                                <div class="t_box">
+                                    <a href="#">
+                                        바로가기
+                                        <img src="./images/Vector.png" alt="화살표">
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="./images/teacher_img2.png" alt="선생님이미지">
+                            
+                        </div>
+                    </div>
+                </article>
+
+                <article id="notice">
+                    <div class="n_section">
+                        <div class="section_title">
+                            <p>PR Center</p>
+                            <h4><span>홍보</span>센터</h4>
+                        </div>
+                        <div class="category">
+                            <button class="active">보도자료</button>
+                            <button>사회공헌</button>
+                            <button>광고자료</button>
+                        </div>
+                        <div class="c_box c_box1">
+                            <ul class="notice_wrap">
+                                <li>
+                                    <a href="#">
+                                        <span class="n_category">기타</span>
+                                        <strong class="title">NE능률, ‘제3회 다다익선 융합 수업자료 공모전’ 시상식 개최</strong>
+                                        <span class="date">2025-03-07</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="n_category">기타</span>
+                                        <strong class="title">NE능률, 베트남 영어 교육 기관과 독점 계약 체결…글로벌 시장 확장 가속화</strong>
+                                        <span class="date">2025-02-12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="n_category">이벤트</span>
+                                        <strong class="title">NE능률, 초등 학부모 무료 특강 ‘우리 아이 진짜 문해력 키우는 달곰한 해법’ 진행</strong>
+                                        <span class="date">2025-02-12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="n_category">이벤트</span>
+                                        <strong class="title">제 1회 NE능률 또래교사 수학 스피치 대회 개최</strong>
+                                        <span class="date">2025-02-12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="n_category">이벤트</span>
+                                        <strong class="title">NE능률 주니어랩, 툰스퀘어와 함께 초중등 대상 ‘AI툰 영어독후감 경시대회’ 개최</strong>
+                                        <span class="date">2024-10-11</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="c_box c_box2"></div>
+                        <div class="c_box c_box3"></div>
+
+                    </div>
+
+                </article>
+        </section>
+        <footer id="footer">
+            <div class="footer_inner">
+                <h1 class="logo">
+                </h1>
+                <div class="info">
+                    <ul>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">이메일무단수집거부</a></li>
+                        <li><a href="#">제휴제안</a></li>
+                    </ul>
+                    <address>
+                        ㈜NE능률 (03925) 서울 특별시 마포구 월드컵북로 396(상암동) 누리꿈스퀘어 비즈니스타워 10층 | 대표이사 : 이정진<br>
+                        대표번호 : 02-2014-7114 [사업별 고객센터 안내] | 팩스 : 02-3142-0356 | 사업자등록번호 : 105-81-65267 | IR문의 : 070-4473-7707<br>
+                        개인정보 보호책임자(CPO) : 김정원(necpo@neungyule.com)<br><br>
+                        Copyright © NE Neungyule, Inc. All Rights Reserved
+                    </address>
+                </div>
+                <div class="customer">
+                    <h5>고객센터</h5>
+                    <h3>02-2014-7114</h3>
+                    <p>평일 오전 9시 - 18시, 점심시간: 오후 12시 - 13시</p>
+                </div>
+                <div class="family_site">
+                    <select>
+                        <option>FAMILY SITE</option>
+                        <option value="https://www.naver.com/">아이챌린지</option>
+                        <option value="https://www.naver.com/">NE kids</option>
+                        <option value="https://www.naver.com/">NE Books</option>
+                        <option value="https://www.naver.com/">NE Bulid & Grow</option>
+                        <option value="https://www.naver.com/">NE Times</option>
+                        <option value="https://www.naver.com/">NE Tutor</option>
+                        <option value="https://www.naver.com/">NE능률 주니어랩</option>
+                        <option value="https://www.naver.com/">NELT</option>
+                    </select>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
