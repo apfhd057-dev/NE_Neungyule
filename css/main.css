@@ -8,7 +8,7 @@
 #header .header_in{
     margin: 0 auto;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1600px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -98,12 +98,11 @@
 }
 #main .main_img{
     margin: 0 auto;
-    width: calc(100% - 80px);
-    max-width: 1500px;
+    width: 100%;
     /* min-height: 230px;
     max-height: 680px; */
-    height: 680px;
-    border-radius: 20px 20px 200px 20px;
+    height: 770px;
+    border-radius: 0 0 200px 0;
     background-color: aliceblue;
     position: absolute;
     top: 0;
@@ -161,76 +160,71 @@
 }
 #history{
     width: 100%;
-    height: 940px;
-    background-color:#1D1717;
-    overflow: hidden;
+    padding: 200px 0;
 }
-#history .h_section{
-    margin: 0 auto;
-    max-width: 1500px;
-    width: 100%;
+#history .history_section{
+    text-align: center;
 }
-#history .section_title{
-    padding-bottom: 40px;
-}
-#history .section_title p{
+#history .history_section p{
+    font-weight: 600;
     font-size: 16px;
-    color: #fff;
 }
-#history .section_title h4{
-    font-size: 45px;
-    color: #fff;
+#history .history_section h4{
+    font-weight: 900;
+    font-size: 64px;
 }
-#history .section_title span{
+#history .history_section span{
     color: #E83828;
 }
-#history .section_contents{
+#history ul{
+    margin: 0 auto;
     display: flex;
+    max-width: 1600px;
     justify-content: space-between;
-    align-items: center;
+    padding: 120px;
 }
-#history .contents_l{
-    width: 37%;
+#history li{
+    text-align: center;
+    border-right: 1px solid #ccc;
+    padding: 0 50px;
 }
-#history .contents_l h2{
-    font-size: 45px;
-    color: #fff;
+#history ul h2{
+    font-size: 80px;
+    font-weight: 900;
 }
-#history .contents_l span{
-    font-size: 160px;
+#history li span{
+    font-size: 20px;
+    font-weight: 900;
     color: #E83828;
 }
-#history .contents_l p{
-    font-size: 24px;
-    color: #fff;
+#history li:last-child{
+    border: none;
 }
-#history .contents_r{
-    width: 63%;
-}
-#history .contents_r>img{
-    width: 100%;
+#history li p{
+    font-size: 20px;
+    font-weight: 600;
+
 }
 #history .bottom_text{
-    padding-top: 5%;
-    font-size: 96px;
-    color: #333;
-    font-weight: 900;
+    font-size: 128px;
+    color: #EBEBEB;
     white-space: nowrap;
-    overflow: hidden;
+    font-weight: 900;
+    
 }
+
 #publish{
         width: 100%;
         overflow: hidden; /* 오른쪽 일부 잘리게 */
-        padding: 30px 0 80px;
-        margin-top: 200px;
+        padding: 100px 0;
+        background-color: #F5F5F5;
     }
 
     /* 제목/버튼 영역 */
     #publish .p_section{
         width: 100%;
-        max-width: 1500px;
+        max-width: 1600px;
         margin: 0 auto;
-        padding: 0 30px;
     }
 
     #publish .section_title{
@@ -277,9 +271,10 @@
 
     /* 책 전체 영역 */
     #publish .books_wrap{
+        margin: 0 auto;
         width: 100%;
+        max-width: 1600px;
         margin-top: 120px;
-        margin-left: 13%;
         overflow: hidden; /* 오른쪽 일부 잘리게 */
     }
 
@@ -290,8 +285,7 @@
     */
     #publish .slide_inner{
         display: flex;
-        align-items: center;
-        gap: 90px;
+        align-items: flex-end;
         width: max-content;
     }
 
@@ -307,27 +301,29 @@
     }
 
     #publish .book_thumb img{
-        width: 390px;
-        height: 530px;
+        width: 280px;
+        height: 360px;
         object-fit: cover;
-        border-radius: 22px;
+        border-radius: 20px;
         display: block;
     }
 
     #publish .book_info{
         width: 400px;
         flex-shrink: 0;
+        padding-right:30px;
+        box-sizing: border-box;
     }
 
     #publish .book_info h3{
         font-size: 36px;
         line-height: 1.35;
-        margin-bottom: 42px;
+        margin-bottom: 40px;
         word-break: keep-all;
     }
 
     #publish .b_txt{
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.8;
         color: #6f6f6f;
         margin-bottom: 90px;
@@ -373,7 +369,6 @@
     }
 
     #publish .go_btn img{
-        width: 18px;
         display: block;
     }
 
@@ -381,7 +376,7 @@
     #publish .book_preview{
         display: flex;
         align-items: center;
-        gap: 90px;
+        gap: 30px;
         flex-shrink: 0;
     }
 
@@ -393,8 +388,8 @@
     }
 
     #publish .preview_item img{
-        width: 390px;
-        height: 530px;
+        width: 180px;
+        height: 230px;
         object-fit: cover;
         border-radius: 22px;
         display: block;
@@ -413,6 +408,32 @@
     #publish .preview_item:hover{
         transform: translateY(-8px);
     }
+    #publish .book_arrow{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+
+    }
+
+    #publish .book_arrow button{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none;
+        background-color: #D9D9D9;
+        font-size: 20px;
+        color: #fff;
+    }
+    #publish .preview_item{
+    text-align: center;
+}
+
+#publish .preview_title{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
 
 #solution{
     width: 100%;
@@ -420,7 +441,7 @@
 #solution .inner{
     margin: 200px auto;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1600px;
 
 }
 #solution .section_title{
@@ -490,7 +511,7 @@
     justify-content: center;
 }
 #solution .slide_r{
-    width: 80px;
+    width: 200px;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -557,7 +578,7 @@
     width: 48%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    border: 30px solid #E83828;
+    border: 50px solid #D0CBC5;
 
 }
 #solution .visual .main_circle{
@@ -568,18 +589,30 @@
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: #ccc;
+    border: 2px solid #eee;
     overflow: hidden;
 }
 #solution .visual .main_circle img{
     width: 100%;
 }
+#solution .category button.active{
+    background-color: #E83828;
+    color: #fff;
+    opacity: 1;
+}
+
+#solution .slide_btn button.active{
+    background-color: #E83828;
+}
 #teacher{
     width: 100%;
+    background-color: #F5F5F5;
+    padding: 120px 0;
 }
 #teacher .t_section{
     margin: 0 auto;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1600px;
 }
 #teacher .section_title{
     padding-bottom: 40px;
@@ -595,122 +628,72 @@
 #teacher .section_title span{
     color: #E83828;
 }
-#teacher .t_con{
+#teacher .t_list{
     display: flex;
     justify-content: space-between;
 }
-#teacher .t_con > img{
-    width: 50%;
-    max-height: 450px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 20px 20px 0 20px;
+#teacher .t_list li{
+    background: url('../images/box1.png') no-repeat 50% 0;
+    width: 492px;
+    height: 512px;
+    overflow: hidden;
+    position: relative;
 }
-#teacher .t_text{
-    max-height: 450px;
-    height: auto;
-    padding: 4%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    align-items: flex-end;
+#teacher .t_card{
+    display: block;
+    width: 100%;
+    height: 100%;
+
 }
-#teacher .b_text{
-    max-height: 450px;
-    height: auto;
-    padding: 4%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
+#teacher .t_list .card1{
+    background: url('../images/t_img1.png') no-repeat 50% 0;
+
 }
-#teacher .red_btn{
-    width: 150px;
-    height: 40px;
-    background-color: #E83828;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#teacher .t_list .card2{
+    background: url('../images/t_img2.png') no-repeat 50% 0;
+
 }
-#teacher .red_btn a{
-    font-size: 28px;
+#teacher .t_list .card3{
+    background: url('../images/t_img3.png') no-repeat 50% 0;
+
+}
+#teacher .txt_box{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+}
+#teacher .txt_box h3{
+    font-size: 40px;
+    font-weight: 900;
     color: #fff;
 }
-#teacher .t_text span{
-    font-size: 16px;
-    padding-top: 10px;
-    color: #777;
-}
-#teacher .t_text .t_box{
-    padding-top: 100px;
-    width: 170px;
-    height: 50px;
-    border-bottom: 1px solid #000;
-}
-#teacher .t_box a{
+
+#teacher .txt_box p{
+    width: 310px;
     font-size: 20px;
-}
-#teacher .t_text .t_box > img{
-    padding-left: 50px;
-}
-
-
-#teacher .b_con{
-    display: flex;
-    justify-content: space-between;
-}
-#teacher .b_con > img{
-    width: 50%;
-    max-height: 450px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0 20px 20px 20px;
-}
-#teacher .red_btn{
-    width: 150px;
-    height: 40px;
-    background-color: #E83828;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#teacher .red_btn a{
-    font-size: 28px;
     color: #fff;
-    font-weight: 700;
 }
-#teacher .t_text p,.b_text p{
-    font-size: 20px;
-    padding-top: 50px;
-}
-#teacher .b_text span{
-    font-size: 16px;
-    padding-top: 10px;
-    color: #777;
-}
-#teacher .b_text .t_box{
-    padding-top: 100px;
-    width: 170px;
-    height: 50px;
-    border-bottom: 1px solid #000;
-}
-#teacher .t_box a{
-    font-size: 20px;
-}
-#teacher .b_text, .t_box img{
-    padding-left: 50px;
+#teacher .arrow_btn{
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
 }
 
 #notice{
     width: 100%;
 }
 #notice .n_section{
-    margin: 200px auto;
+    margin: 100px auto 150px;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1600px;
     
 }
 #notice .section_title{
@@ -816,7 +799,7 @@
     margin: 0 auto;
     padding: 40px 0;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1600px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -1147,3 +1130,6 @@
             font-size: 18px;
         }
     }
+}
+
+

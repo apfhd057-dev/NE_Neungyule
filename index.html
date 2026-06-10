@@ -74,7 +74,6 @@
             </div>
         </header>
         <main id="main">
-                <div class="main_box"></div>
                 <ul class="main_img">
                     <li><a href=""><img src="./images/main_img.png" alt="" srcset=""></a></li>
                     <li><a href=""><img src="./images/main_img2.png" alt="" srcset=""></a></li>
@@ -86,30 +85,52 @@
         </main>
         <section id="contents">
             <article id="history">
-                <div class="h_section">
-                    <div class="section_title">
-                        <p>About NE</p>
-                        <h4>NE능률이 제안하는 <span>교육의 확신</span></h4>
-                    </div>
-                    <div class="section_contents">
-                        <div class="contents_l">
-                            <h2><span>46</span>년의 역사</h2>
-                            <P>오랜 시간 쌓아온 교육 전문성은<br>
-                                오늘의 <b>NE능률</b>을 만들었습니다.</P>
-                        </div>
-                        <div class="contents_r">
-                            <img src="./images/history.png" alt="">
-                        </div>
-                    </div>
+                <div class="history_section">
+                    <p>오랜 시간 쌓아 온 교육 전문성</p>
+                    <h4>NE능률이 제안하는 <span>교육의 확신</span></h4>
                 </div>
-                 <p class="bottom_text">EDUCATION INNOVATION EDUCATION INNOVATION EDUCATION INNOVATION</p>
+                <ul>
+                    <li>
+                        <img src="./images/icon1.png" alt="">
+                        <h2>1980</h2>
+                        <span>SINCE</span>
+                        <p>교육출판의 시작</p>
+                    </li>
+                    <li>
+                        <img src="./images/icon2.png" alt="">
+                        <h2>46</h2>
+                        <span>YEARS</span>
+                        <p>쌓아온 교육의 전문성</p>
+                    </li>
+                    <li>
+                        <img src="./images/icon3.png" alt="">
+                        <h2>1위</h2>
+                        <span>BRAND</span>
+                        <p>영어교육 대표 브랜드</p>
+                    </li>
+                    <li>
+                        <img src="./images/icon4.png" alt="">
+                        <h2>3000+</h2>
+                        <span>CONTNETS</span>
+                        <p>학습 콘텐츠 보유</p>
+                    </li>
+                    <li>
+                        <img src="./images/icon5.png" alt="">
+                        <h2>2026</h2>
+                        <span>VISION</span>
+                        <p>에듀테크 선도 기업</p>
+                    </li>
+                </ul>
+                <p class="bottom_text">EDUCATION INNOVATION EDUCATION INNOVATION EDUCATION INNOVATION</p>
+
             </article>
-            <article id="publish">
-    <div class="p_section">
-        <div class="section_title">
-            <p>Learning Contents</p>
-            <h4>학습 <span>도서</span></h4>
-        </div>
+            
+        <article id="publish">
+        <div class="p_section">
+            <div class="section_title">
+                <p>Learning Contents</p>
+                <h4>학습 <span>도서</span></h4>
+            </div>
 
         <div class="category">
             <button type="button" class="active" data-tab="all">전체</button>
@@ -121,6 +142,10 @@
     </div>
 
     <div class="books_wrap">
+        <div class="book_arrow">
+            <button type="button" class="prev_btn">‹</button>
+            <button type="button" class="next_btn">›</button>
+         </div>
         <div class="slide_inner">
             <!-- 왼쪽 대표 책 + 가운데 설명 -->
             <div class="book_main">
@@ -132,11 +157,11 @@
                     <h3 id="mainBookTitle">초등 영어문법책</h3>
                     <p class="b_txt" id="mainBookDesc">초등학생용 영어 문법 학습서입니다.</p>
 
-                    <p class="price">
+                    <!-- <p class="price">
                         <span class="discount" id="mainBookDiscount">10%</span>
                         <span class="sale" id="mainBookSale">14,400원</span>
                         <del class="original" id="mainBookOriginal">16,000원</del>
-                    </p>
+                    </p> -->
 
                     <div class="go_btn">
                         <a id="mainBookLink" href="#">
@@ -163,19 +188,23 @@
                                 <div class="visual">
                                     <span class="bg_text">SOLUTION</span>
                                     <div class="red_circle"></div>
-                                    <div class="main_circle"><img src="./images/soution_img1.png" alt=""></div>
+                                    <div class="main_circle">
+                                        <img id="solutionImg" src="./images/soution_img1.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                             <div class="s_inner_r">
                                 <div class="r_text">
                                     <div class="category">
-                                        <button>영유아</button>
-                                        <button>초ㆍ중ㆍ고</button>
+                                        <button class="active" data-solution-tab="baby">영유아</button>
+                                        <button data-solution-tab="student">초ㆍ중ㆍ고</button>
                                     </div>
-                                    <span>#놀이형 콘텐츠 #월령 맞춤 설계</span>
-                                    <h4>아이 챌린지</h4>
-                                    <p>영유아 월령 발달에 맞춰 바른 습관을 길러주는<br>
-                                        홈스쿨 프로그램</p>
+                                    <span id="solutionTag">#놀이형 콘텐츠 #월령 맞춤 설계</span>
+                                    <h4 id="solutionTitle">아이 챌린지</h4>
+                                    <p id="solutionDesc">
+                                        영유아 월령 발달에 맞춰 바른 습관을 길러주는<br>
+                                        홈스쿨 프로그램
+                                    </p>
                                     <div class="c_box">
                                         <a href="#">
                                             바로가기
@@ -184,18 +213,13 @@
                                     </div>
                                 </div>
                                 <div class="slide_r">
-                                    <div class="slide_btn">
-                                        <button></button>
-                                        <button></button>
-                                        <button></button>
-                                        <button></button>
-                                    </div>
+                                    <div class="slide_btn" id="solutionDots"></div>
                                     <div class="slide_count">
-                                        <button class="prev">&lt;</button>
-                                        <span class="current">01</span>
+                                        <button class="prev" id="solutionPrev">&lt;</button>
+                                        <span class="current" id="solutionCurrent">01</span>
                                         <span class="slash">/</span>
-                                        <span class="total">07</span>
-                                        <button class="next">&gt;</button>
+                                        <span class="total" id="solutionTotal">04</span>
+                                        <button class="next" id="solutionNext">&gt;</button>
                                     </div>
                                 </div>
                                 
@@ -212,35 +236,35 @@
                             <p>Education Services</p>
                             <h4>NE능률 <span>교육 솔루션</span></h4>
                         </div>
-                        <div class="t_con">
-                            <img src="./images/teacher_img1.png" alt="선생님이미지">
-                            <div class="t_text">
-                                <div class="red_btn"><a href="#">NE Tutor</a></div>
-                                <p>수업 준비부터 문제 출제까지, 선생님을 위한 모든 솔루션</p>
-                                <span>#교재별 부가자료 #스마트 e-book #어휘 문제 마법사</span>
-                                <div class="t_box">
-                                    <a href="#">
-                                        바로가기
-                                        <img src="./images/Vector.png" alt="화살표">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="b_con">
-                            <div class="b_text">
-                                <div class="red_btn"><a href="#">NELT</a></div>
-                                <p>데이터로 증명하는 가장 객관적인 실력 분석 서비스</p>
-                                <span>#KATE 공식인증 #영역별 정밀진단 #맞춤형 학습처방</span>
-                                <div class="t_box">
-                                    <a href="#">
-                                        바로가기
-                                        <img src="./images/Vector.png" alt="화살표">
-                                    </a>
-                                </div>
-                            </div>
-                            <img src="./images/teacher_img2.png" alt="선생님이미지">
-                            
-                        </div>
+                        <ul class="t_list">
+                            <li>
+                                <a href="#" class="t_card card1">
+                                    <div class="txt_box">
+                                        <h3>NELT</h3>
+                                        <p>수업 준비부터 문제 출제까지, 선생님을 위한 모든 솔루션</p>
+                                    </div>
+                                    <span class="arrow_btn">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t_card card2">
+                                    <div class="txt_box">
+                                        <h3>NELT</h3>
+                                        <p>수업 준비부터 문제 출제까지, 선생님을 위한 모든 솔루션</p>
+                                    </div>
+                                    <span class="arrow_btn">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t_card card3">
+                                    <div class="txt_box">
+                                        <h3>NELT</h3>
+                                        <p>수업 준비부터 문제 출제까지, 선생님을 위한 모든 솔루션</p>
+                                    </div>
+                                    <span class="arrow_btn">→</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </article>
 
