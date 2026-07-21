@@ -1,37 +1,67 @@
-$(document).ready(function(){
-            $('.sub').hide();
-            $('.submn_area').hide().css({height:0});
+$(document).ready(function () {
+    const $header = $("#header");
+    const $subMenus = $("#nav .sub");
+    const $subArea = $(".submn_area");
 
-            $('#header').mouseenter(function(){
-                $('.submn_area')
-                    .stop(true,true)
-                    .show()
-                    .animate({height:250},200);
+    function closeDesktopMenu() {
+        $subMenus.stop(true, true).hide();
 
-                $('.sub')
-                    .stop(true,true)
-                    .fadeIn(150);
+        $subArea
+            .stop(true, true)
+            .css({ height: 0 })
+            .hide();
+    }
+
+    function openDesktopMenu() {
+        if (window.innerWidth <= 1024) {
+            closeDesktopMenu();
+            return;
+        }
+
+        $subArea
+            .stop(true, true)
+            .show()
+            .animate({ height: 250 }, 200);
+
+        $subMenus
+            .stop(true, true)
+            .fadeIn(150);
+    }
+
+    closeDesktopMenu();
+
+    $header.on("mouseenter.desktopMenu", openDesktopMenu);
+
+    $header.on("mouseleave.desktopMenu", function () {
+        if (window.innerWidth <= 1024) {
+            closeDesktopMenu();
+            return;
+        }
+
+        $subMenus
+            .stop(true, true)
+            .fadeOut(100);
+
+        $subArea
+            .stop(true, true)
+            .delay(50)
+            .animate({ height: 0 }, 150, function () {
+                $(this).hide();
             });
+    });
 
-            $('#header').mouseleave(function(){
-                $('.sub')
-                    .stop(true,true)
-                    .fadeOut(100);
-
-                $('.submn_area')
-                    .stop(true,true)
-                    .delay(50)
-                    .animate({height:0},150,function(){
-                        $(this).hide();
-                    });
-            });
-        });
+    $(window).on("resize.desktopMenu", function () {
+        if (window.innerWidth <= 1024) {
+            closeDesktopMenu();
+        }
+    });
+});
 
 
         // 메인이미지 슬라이드
 
         $(document).ready(function(){
-            var visual = $('.main_img > li');
+            var visual = $('.main_img > li:not(.btn_wrap)');
             var button = $('.btn > li');
             var current = 0;
             var setIntervalId;
@@ -60,7 +90,8 @@ $(document).ready(function(){
             
             //자동실행함수
             function timer(){
-            setIntervalId = setInterval  (function(){
+            clearInterval(setIntervalId);
+            setIntervalId = setInterval(function(){
                 var n = current+1;
                 if(n== visual.length){
                     n=0;
@@ -87,145 +118,63 @@ $(document).ready(function(){
 
 
 
-//가운데
-document.addEventListener('DOMContentLoaded', function () {
+// 학습 도서 무한 슬라이드
+document.addEventListener("DOMContentLoaded", function () {
     const bookData = {
         all: [
-            {
-                title: '초등 영어문법책',
-                desc: '초등학생용 영어 문법 학습서입니다.',
-                image: './images/book1.png',
-                link: '#'
-            },
-            {
-                title: '리딩튜터 Junior 1',
-                desc: '초등학생이 읽기 실력을 자연스럽게 키울 수 있는 교재입니다.',
-                image: './images/book2.jpg',
-                link: '#'
-            },
-            {
-                title: '리딩튜터 Junior 2',
-                desc: '초등학생이 읽기 실력을 자연스럽게 키울 수 있는 교재입니다.',
-                image: './images/book1.png',
-                link: '#'
-            },
-            {
-                title: '리딩튜터 Junior 3',
-                desc: '초등학생이 읽기 실력을 자연스럽게 키울 수 있는 교재입니다.',
-                image: './images/book2.jpg',
-                link: '#'
-            },
-            {
-                title: '리딩튜터 Junior 4',
-                desc: '초등학생이 읽기 실력을 자연스럽게 키울 수 있는 교재입니다.',
-                image: './images/book1.png',
-                link: '#'
-            },
+            { title: "Grammar Inside 1", desc: "많은 양의 문제를 반복 연습하여 문법 기초를 다지는 초등 영문법", image: "./images/elementary1.png", link: "#" },
+            { title: "중등 내신백신 기출문제집 English 2", desc: "내신 백점을 위한 NE능률 교과서 내신 대비서", image: "./images/middle1.png", link: "#" },
+            { title: "High School English Reading & Writing 자습서", desc: "2022 개정 교육과정 High School English Reading & Writing의 핵심 내용 완벽 정리", image: "./images/high1.png", link: "#" },
+            { title: "Read It! 30 1", desc: "단계별 필수 학습 요소를 쉽고, 재미있게 익히는 독해력 향상 Reading 시리즈", image: "./images/etc1.png", link: "#" },
+            { title: "사고셈 초등", desc: "생각의 힘을 키우는 연산", image: "./images/elementary2.png", link: "#" }
         ],
 
         elementary: [
-            {
-                title: '초등 영어문법책',
-                desc: '초등학생용 영어 문법 학습서입니다.',
-                image: './images/book1.png',
-                link: '#'
-            },
-            {
-                title: '리딩튜터 Junior 1',
-                desc: '초등학생용 리딩 훈련 교재입니다.',
-                image: './images/book2.jpg',
-                link: '#'
-            },
-            {
-                title: '초등 영어 독해',
-                desc: '초등학생이 부담 없이 독해를 익힐 수 있는 교재입니다.',
-                image: './images/book1.png',
-                link: '#'
-            },
-            {
-                title: '리딩튜터 Junior 1',
-                desc: '초등학생용 리딩 훈련 교재입니다.',
-                image: './images/book2.jpg',
-                link: '#'
-            }
+            { title: "Grammar Inside 1", desc: "많은 양의 문제를 반복 연습하여 문법 기초를 다지는 초등 영문법", image: "./images/elementary1.png", link: "#" },
+            { title: "사고셈 초등", desc: "생각의 힘을 키우는 연산", image: "./images/elementary2.png", link: "#" },
+            { title: "수능까지 이어지는 초등 고학년 수학 대수1-1 심화편", desc: "상위권 수능 전략", image: "./images/elementary3.png", link: "#" },
+            { title: "Subject Link 1 (2nd Edition)", desc: "주제별 통합 교과과정 프로그램을 바탕으로 창의·융합적 사고를 길러주는 Reading 시리즈", image: "./images/elementary4.png", link: "#" },
+            { title: "능률VOCA 초등 기본 (2025 개정)", desc: "따라 쓰며 체계적으로 완성하는", image: "./images/elementary5.png", link: "#" }
         ],
 
         middle: [
-            {
-                title: '중학 영어문법',
-                desc: '중학생을 위한 핵심 영어 문법 교재입니다.',
-                image: './images/middle1.jpg',
-                link: '#'
-            },
-            {
-                title: '중학 독해 기본',
-                desc: '중학생 독해 실력을 단계적으로 잡아주는 교재입니다.',
-                image: './images/middle2.jpg',
-                link: '#'
-            },
-            {
-                title: '중학 어휘 완성',
-                desc: '중등 필수 어휘를 집중적으로 정리할 수 있는 교재입니다.',
-                image: './images/middle3.jpg',
-                link: '#'
-            }
+            { title: "중등 내신백신 기출문제집 English 2", desc: "내신 백점을 위한 NE능률 교과서 내신 대비서", image: "./images/middle1.png", link: "#" },
+            { title: "Middle School English 2", desc: "2022 개정 교육과정 Middle School English 2의 핵심 내용 완벽 정리", image: "./images/middle2.png", link: "#" },
+            { title: "한수 중학국어 1-2", desc: "한 번에 수능까지 완성하는 중학국어", image: "./images/middle3.png", link: "#" },
+            { title: "수심달(수학에 심장을 달다) 심화편", desc: "사고의 확장을 완성하다", image: "./images/middle4.png", link: "#" },
+            { title: "경시 대수의 테크닉", desc: "KMO, 영재교, 과고, 자사고, 고등교내경시 대비 필독서", image: "./images/middle5.png", link: "#" }
         ],
 
         high: [
-            {
-                title: '고등 영어문법',
-                desc: '고등학생 내신과 수능 대비에 적합한 영어 문법 교재입니다.',
-                image: './images/high1.jpg',
-                link: '#'
-            },
-            {
-                title: '고등 독해 완성',
-                desc: '수능형 독해 훈련에 맞춘 고등 영어 교재입니다.',
-                image: './images/high2.jpg',
-                link: '#'
-            },
-            {
-                title: '고등 어휘 실전',
-                desc: '고등 필수 어휘를 실전형으로 정리한 교재입니다.',
-                image: './images/high3.jpg',
-                link: '#'
-            }
+            { title: "High School English Reading & Writing 자습서", desc: "2022 개정 교육과정 High School English Reading & Writing의 핵심 내용 완벽 정리", image: "./images/high1.png", link: "#" },
+            { title: "섹션뽀개기 극수필편", desc: "100명 전문가들의 확실한 실전 수능 국어 기출문제 해설서", image: "./images/high2.png", link: "#" },
+            { title: "내신 HIGH-END(내신하이엔드)_미적분", desc: "1등급을 위한 심화 문제 공략서", image: "./images/high3.png", link: "#" },
+            { title: "능률VOCA 고등 기본", desc: "내신부터 모의고사까지 대비하는 고등 기본 어휘", image: "./images/high4.png", link: "#" },
+            { title: "내신백신 기출문제집 Common English 1", desc: "내신 1등급을 위한 NE능률 교과서 내신 대비서", image: "./images/high5.png", link: "#" }
         ],
 
         etc: [
-            {
-                title: '파닉스 워크북',
-                desc: '기초 발음 훈련에 적합한 보조 학습 교재입니다.',
-                image: './images/etc1.jpg',
-                link: '#'
-            },
-            {
-                title: '영어 쓰기 연습장',
-                desc: '쓰기 훈련을 위한 보조형 교재입니다.',
-                image: './images/etc2.jpg',
-                link: '#'
-            },
-            {
-                title: '단어 테스트북',
-                desc: '단어 암기와 테스트를 함께 할 수 있는 교재입니다.',
-                image: './images/etc3.jpg',
-                link: '#'
-            }
+            { title: "Read It! 30 1", desc: "단계별 필수 학습 요소를 쉽고, 재미있게 익히는 독해력 향상 Reading 시리즈", image: "./images/etc1.png", link: "#" },
+            { title: "세 마리 토끼 잡는 역사 탐험 4.경상", desc: "책으로 만나고 엄마와 함께 떠나는 초등 역사 여행", image: "./images/etc2.png", link: "#" },
+            { title: "Come On, Phonics 1: Student Book", desc: "기초부터 쉽고 재미있게 공부할 수 있는 Come On 시리즈의 새로운 파닉스 교재", image: "./images/etc3.png", link: "#" },
+            { title: "Easy Link Starter 1", desc: "주제별 통합교과과정을 바탕으로 읽기의 기본기를 세워주는 Reading 시리즈", image: "./images/etc4.png", link: "#" },
+            { title: "Come On, Everyone 1", desc: "영어의 기본기를 잡아주는, Input과 Output이 확실한 Real 코스북", image: "./images/etc5.png", link: "#" }
         ]
     };
 
-    const buttons = document.querySelectorAll('#publish .category button');
-    const mainBookImg = document.getElementById('mainBookImg');
-    const mainBookTitle = document.getElementById('mainBookTitle');
-    const mainBookDesc = document.getElementById('mainBookDesc');
-    const mainBookLink = document.getElementById('mainBookLink');
-    const previewList = document.getElementById('previewList');
-    const prevBtn = document.querySelector('#publish .prev_btn');
-    const nextBtn = document.querySelector('#publish .next_btn');
+    const buttons = document.querySelectorAll("#publish .category button");
+    const mainBookImg = document.getElementById("mainBookImg");
+    const mainBookTitle = document.getElementById("mainBookTitle");
+    const mainBookDesc = document.getElementById("mainBookDesc");
+    const mainBookLink = document.getElementById("mainBookLink");
+    const previewList = document.getElementById("previewList");
+    const prevBtn = document.querySelector("#publish .prev_btn");
+    const nextBtn = document.querySelector("#publish .next_btn");
+    const booksWrap = document.querySelector("#publish .books_wrap");
 
     let currentBooks = [];
     let currentIndex = 0;
-    let autoSlide;
+    let autoSlide = null;
 
     function renderMainBook(book) {
         mainBookImg.src = book.image;
@@ -235,101 +184,114 @@ document.addEventListener('DOMContentLoaded', function () {
         mainBookLink.href = book.link;
     }
 
-    function renderPreview(tabName) {
-    const books = bookData[tabName];
-    previewList.innerHTML = '';
+    function renderPreview() {
+        previewList.innerHTML = "";
 
-    books.slice(1).forEach(function(book) {
-        const item = document.createElement('div');
-        item.className = 'preview_item';
+        if (currentBooks.length <= 1) return;
 
-        item.innerHTML = `<img src="${book.image}" alt="${book.title}"> <p class="preview_title">${book.title}</p>`;
+        const previewCount = Math.min(4, currentBooks.length - 1);
 
-        item.addEventListener('click', function() {
-            renderMainBook(book);
+        for (let offset = 1; offset <= previewCount; offset++) {
+            const bookIndex = (currentIndex + offset) % currentBooks.length;
+            const book = currentBooks[bookIndex];
 
-            document.querySelectorAll('#previewList .preview_item').forEach(function(el) {
-                el.classList.remove('active');
-                el.classList.add('dim');
+            const item = document.createElement("div");
+            item.className = "preview_item";
+            item.dataset.index = String(bookIndex);
+
+            item.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <p class="preview_title">${book.title}</p>
+            `;
+
+            item.addEventListener("click", function () {
+                currentIndex = Number(this.dataset.index);
+                updateBookSlider();
+                restartAutoSlide();
             });
 
-            item.classList.add('active');
-            item.classList.remove('dim');
-        });
+            previewList.appendChild(item);
+        }
+    }
 
-        previewList.appendChild(item);
-    });
-}
+    function updateBookSlider() {
+        if (!currentBooks.length) return;
+
+        renderMainBook(currentBooks[currentIndex]);
+        renderPreview();
+    }
+
+    function moveBook(direction) {
+        if (!currentBooks.length) return;
+
+        currentIndex =
+            (currentIndex + direction + currentBooks.length) %
+            currentBooks.length;
+
+        updateBookSlider();
+    }
+
+    function stopAutoSlide() {
+        if (autoSlide) {
+            clearInterval(autoSlide);
+            autoSlide = null;
+        }
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide();
+
+        if (currentBooks.length <= 1) return;
+
+        autoSlide = setInterval(function () {
+            moveBook(1);
+        }, 3000);
+    }
+
+    function restartAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
 
     function renderTab(tabName) {
         const books = bookData[tabName];
+
         if (!books || books.length === 0) return;
 
         currentBooks = books;
         currentIndex = 0;
 
-        renderMainBook(currentBooks[currentIndex]);
-        renderPreview(tabName);
-
-        stopAutoSlide();      // 기존 제거
-        startAutoSlide();     // 다시 시작
+        updateBookSlider();
+        restartAutoSlide();
     }
 
-    function startAutoSlide() {
-        autoSlide = setInterval(function () {
-            currentIndex++;
-
-            if (currentIndex >= currentBooks.length) {
-                currentIndex = 0;
-            }
-
-            renderMainBook(currentBooks[currentIndex]);
-        }, 3000); // 3초
-    }
-    function stopAutoSlide() {
-        clearInterval(autoSlide);
-    }
-
-    buttons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            buttons.forEach(function(btn) {
-                btn.classList.remove('active');
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            buttons.forEach(function (btn) {
+                btn.classList.remove("active");
             });
 
-            this.classList.add('active');
+            this.classList.add("active");
             renderTab(this.dataset.tab);
         });
     });
 
-    prevBtn.addEventListener('click', function () {
-        stopAutoSlide();
-
-        currentIndex--;
-
-        if (currentIndex < 0) {
-            currentIndex = currentBooks.length - 1;
-        }
-
-        renderMainBook(currentBooks[currentIndex]);
-
-        startAutoSlide();
+    prevBtn.addEventListener("click", function () {
+        moveBook(-1);
+        restartAutoSlide();
     });
 
-    nextBtn.addEventListener('click', function () {
-    stopAutoSlide();
+    nextBtn.addEventListener("click", function () {
+        moveBook(1);
+        restartAutoSlide();
+    });
 
-    currentIndex++;
-
-    if (currentIndex >= currentBooks.length) {
-        currentIndex = 0;
+    if (booksWrap) {
+        booksWrap.addEventListener("mouseenter", stopAutoSlide);
+        booksWrap.addEventListener("mouseleave", startAutoSlide);
     }
 
-    renderMainBook(currentBooks[currentIndex]);
-
-    startAutoSlide();
-});
-
-renderTab('all');
+    renderTab("all");
 });
 
 //아래 탭메뉴
@@ -361,23 +323,9 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
                 tag: '#창의력 발달 #놀이 학습',
-                title: '아이 챌린지 2',
-                desc: '아이의 호기심과 표현력을 키워주는<br>놀이 중심 학습 프로그램',
+                title: 'NE Kids',
+                desc: '누리과정을 반영한 독서,영어 등<br>유아교육 프로그램',
                 image: './images/soution_img2.png',
-                link: '#'
-            },
-            {
-                tag: '#생활습관 #감각 발달',
-                title: '아이 챌린지 3',
-                desc: '일상 속 바른 습관을 자연스럽게 익히는<br>영유아 맞춤 프로그램',
-                image: './images/soution_img3.png',
-                link: '#'
-            },
-            {
-                tag: '#부모 참여 #홈스쿨',
-                title: '아이 챌린지 4',
-                desc: '부모와 아이가 함께 교감하며 성장하는<br>가정 연계 학습 프로그램',
-                image: './images/soution_img4.png',
                 link: '#'
             }
         ],
@@ -385,23 +333,30 @@ document.addEventListener('DOMContentLoaded', function () {
         student: [
             {
                 tag: '#수준별 학습 #교과 연계',
-                title: '초중고 챌린지 1',
-                desc: '초중고 학생의 학습 수준에 맞춘<br>체계적인 교육 프로그램',
+                title: '교과서',
+                desc: '오랜 교육 연구 노하우로 만든<br>중고등 영어, 수학, 제2외국어 교과서',
                 image: './images/student_img1.png',
                 link: '#'
             },
             {
                 tag: '#내신 대비 #학습 관리',
-                title: '초중고 챌린지 2',
-                desc: '학교 수업과 시험 대비를 함께 잡아주는<br>맞춤형 학습 프로그램',
+                title: '학습서',
+                desc: '영어,수학,국어,ELT 등 다양한 학습 교재',
                 image: './images/student_img2.png',
                 link: '#'
             },
             {
                 tag: '#자기주도학습 #실력 향상',
-                title: '초중고 챌린지 3',
-                desc: '스스로 공부하는 힘을 기를 수 있도록 돕는<br>학습 성장 프로그램',
+                title: 'NE능률 주니어랩',
+                desc: '초ㆍ중등 영어학습의 모든것,<br>No.1 영어전문학원',
                 image: './images/student_img3.png',
+                link: '#'
+            },
+            {
+                tag: '#자기주도학습 #실력 향상',
+                title: 'NETimes',
+                desc: '영어 실력과 비판적 사고력을<br>키워주는 초중고 교육용 영자신문',
+                image: './images/student_img4.png',
                 link: '#'
             }
         ]
@@ -498,3 +453,371 @@ document.addEventListener('DOMContentLoaded', function () {
 
     renderSolution();
 });
+
+/* ==================================================
+   SCROLL REVEAL MOTION
+   배경 장식 오브제 없이 콘텐츠 등장 효과만 적용
+================================================== */
+(function () {
+    "use strict";
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    let revealObserver = null;
+
+    function observeElement(element) {
+        if (
+            reducedMotion.matches ||
+            !("IntersectionObserver" in window)
+        ) {
+            element.classList.add("is-visible");
+            return;
+        }
+
+        revealObserver.observe(element);
+    }
+
+    function addReveal(selector, options) {
+        const settings = Object.assign(
+            {
+                type: "",
+                startDelay: 0,
+                step: 0
+            },
+            options || {}
+        );
+
+        document.querySelectorAll(selector).forEach(function (element, index) {
+            if (element.classList.contains("motion-reveal")) return;
+
+            element.classList.add("motion-reveal");
+
+            if (settings.type) {
+                element.classList.add(settings.type);
+            }
+
+            element.style.setProperty(
+                "--motion-delay",
+                (settings.startDelay + index * settings.step) + "ms"
+            );
+
+            observeElement(element);
+        });
+    }
+
+    function retriggerSwap(element) {
+        if (!element) return;
+
+        element.classList.remove("motion-swap");
+        void element.offsetWidth;
+        element.classList.add("motion-swap");
+    }
+
+    function observeImageSwap(image, target) {
+        if (
+            !image ||
+            !target ||
+            !("MutationObserver" in window)
+        ) {
+            return;
+        }
+
+        const observer = new MutationObserver(function (mutations) {
+            const srcChanged = mutations.some(function (mutation) {
+                return (
+                    mutation.type === "attributes" &&
+                    mutation.attributeName === "src"
+                );
+            });
+
+            if (srcChanged) {
+                retriggerSwap(target);
+            }
+        });
+
+        observer.observe(image, {
+            attributes: true,
+            attributeFilter: ["src"]
+        });
+    }
+
+    function preparePreviewItems() {
+        addReveal("#previewList .preview_item", {
+            type: "motion-pop",
+            startDelay: 0,
+            step: 65
+        });
+    }
+
+    function observePreviewList() {
+        const previewList = document.getElementById("previewList");
+
+        if (
+            !previewList ||
+            !("MutationObserver" in window)
+        ) {
+            return;
+        }
+
+        const observer = new MutationObserver(function () {
+            requestAnimationFrame(preparePreviewItems);
+        });
+
+        observer.observe(previewList, {
+            childList: true
+        });
+
+        preparePreviewItems();
+    }
+
+    function initScrollMotion() {
+        document.documentElement.classList.add("motion-ready");
+
+        revealObserver = "IntersectionObserver" in window
+            ? new IntersectionObserver(
+                function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: .14,
+                    rootMargin: "0px 0px -8% 0px"
+                }
+            )
+            : null;
+
+        /* HISTORY */
+        addReveal("#history .history_section > *", {
+            startDelay: 0,
+            step: 100
+        });
+
+        addReveal("#history ul > li", {
+            type: "motion-pop",
+            startDelay: 0,
+            step: 105
+        });
+
+        addReveal("#history .bottom_text", {
+            type: "motion-left"
+        });
+
+        /* PUBLISH */
+        addReveal("#publish .section_title > *", {
+            startDelay: 0,
+            step: 95
+        });
+
+        addReveal("#publish .category button", {
+            type: "motion-pop",
+            startDelay: 70,
+            step: 60
+        });
+
+        addReveal("#publish .book_thumb", {
+            type: "motion-left"
+        });
+
+        addReveal("#publish .book_info", {
+            type: "motion-right",
+            startDelay: 90
+        });
+
+        addReveal("#publish .book_arrow", {
+            type: "motion-pop",
+            startDelay: 130
+        });
+
+        /* SOLUTION */
+        addReveal("#solution .section_title > *", {
+            startDelay: 0,
+            step: 95
+        });
+
+        addReveal("#solution .visual", {
+            type: "motion-left"
+        });
+
+        addReveal("#solution .r_text", {
+            type: "motion-right",
+            startDelay: 95
+        });
+
+        addReveal("#solution .slide_r", {
+            type: "motion-pop",
+            startDelay: 170
+        });
+
+        /* TEACHER */
+        addReveal("#teacher .section_title > *", {
+            startDelay: 0,
+            step: 95
+        });
+
+        addReveal("#teacher .t_list > li", {
+            type: "motion-pop",
+            startDelay: 0,
+            step: 120
+        });
+
+        /* NOTICE */
+        addReveal("#notice .section_title > *", {
+            startDelay: 0,
+            step: 95
+        });
+
+        addReveal("#notice > .n_section > .category button", {
+            type: "motion-pop",
+            startDelay: 65,
+            step: 65
+        });
+
+        addReveal("#notice .notice_wrap li", {
+            startDelay: 0,
+            step: 65
+        });
+
+        addReveal("#notice .social_box", {
+            type: "motion-pop",
+            startDelay: 0,
+            step: 110
+        });
+
+        addReveal("#notice .promotion_box", {
+            type: "motion-pop",
+            startDelay: 0,
+            step: 80
+        });
+
+        observePreviewList();
+
+        observeImageSwap(
+            document.getElementById("mainBookImg"),
+            document.querySelector("#publish .book_main")
+        );
+
+        observeImageSwap(
+            document.getElementById("solutionImg"),
+            document.querySelector("#solution .s_inner")
+        );
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initScrollMotion,
+            { once: true }
+        );
+    } else {
+        initScrollMotion();
+    }
+})();
+
+/* ==================================================
+   MOBILE SITEMAP
+================================================== */
+(function () {
+    "use strict";
+
+    const openButton = document.querySelector(".hamburger_btn");
+    const sitemap = document.getElementById("mobileSitemap");
+    const closeButton = document.querySelector(".mobile_close_btn");
+    const mobileLinks = document.querySelectorAll(
+        ".mobile_sitemap a"
+    );
+
+    if (!openButton || !sitemap || !closeButton) return;
+
+    function openMenu() {
+        sitemap.classList.add("is-open");
+        sitemap.setAttribute("aria-hidden", "false");
+
+        openButton.setAttribute("aria-expanded", "true");
+        openButton.setAttribute("aria-label", "전체 메뉴 닫기");
+
+        document.body.classList.add("menu-open");
+
+        requestAnimationFrame(function () {
+            closeButton.focus();
+        });
+    }
+
+    function closeMenu() {
+        sitemap.classList.remove("is-open");
+        sitemap.setAttribute("aria-hidden", "true");
+
+        openButton.setAttribute("aria-expanded", "false");
+        openButton.setAttribute("aria-label", "전체 메뉴 열기");
+
+        document.body.classList.remove("menu-open");
+    }
+
+    openButton.addEventListener("click", function () {
+        const isOpen = sitemap.classList.contains("is-open");
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    closeButton.addEventListener("click", closeMenu);
+
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            sitemap.classList.contains("is-open")
+        ) {
+            closeMenu();
+            openButton.focus();
+        }
+    });
+
+    mobileLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (this.getAttribute("href") !== "#") {
+                closeMenu();
+            }
+        });
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 1024) {
+            closeMenu();
+        }
+    });
+})();
+
+/* ==================================================
+   RESPONSIVE MAIN VISUAL IMAGE FALLBACK
+   태블릿·모바일 이미지가 없을 때 데스크톱 이미지로 복구
+================================================== */
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("#main .main_img picture img").forEach(function (image) {
+        image.addEventListener("error", function handleMainImageError() {
+            const fallback = this.dataset.fallback;
+
+            if (!fallback || this.src.endsWith(fallback.replace("./", "/"))) {
+                return;
+            }
+
+            const picture = this.closest("picture");
+
+            if (picture) {
+                picture.querySelectorAll("source").forEach(function (source) {
+                    source.remove();
+                });
+            }
+
+            this.src = fallback;
+        });
+    });
+});
+

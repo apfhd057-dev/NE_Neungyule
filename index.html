@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui.js"></script>
-    <script src="./js/menu.js"></script>
+    <script src="./js/menu.js" defer></script>
 </head>
 <body>
     <div id="wrap">
@@ -66,22 +66,164 @@
                     <li><a href="#">IR</a></li>
                     <li><a href="#">English</a></li>
                 </ul>
-                <div class="hamburger_btn">
-                    <img src="./images/hamburger.png" alt="">
-                </div>
+                <button
+                    type="button"
+                    class="hamburger_btn"
+                    aria-label="전체 메뉴 열기"
+                    aria-controls="mobileSitemap"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
             <div class="submn_area">
             </div>
+
+            <div class="mobile_sitemap" id="mobileSitemap" aria-hidden="true">
+                <div class="mobile_sitemap_inner">
+                    <div class="mobile_sitemap_top">
+                        <a href="#" class="mobile_logo">
+                            <img src="./images/로고.png" alt="NE능률">
+                        </a>
+
+                        <button
+                            type="button"
+                            class="mobile_close_btn"
+                            aria-label="전체 메뉴 닫기"
+                        >
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <nav class="mobile_nav" aria-label="모바일 전체 메뉴">
+                        <ul>
+                            <li>
+                                <a href="./sub1.html" class="mobile_main_link">
+                                    <span>기업소개</span>
+                                    <em>01</em>
+                                </a>
+                                <ul class="mobile_sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
+                                    <li><a href="#">위치안내</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="mobile_main_link">
+                                    <span>출판 교재</span>
+                                    <em>02</em>
+                                </a>
+                                <ul class="mobile_sub">
+                                    <li><a href="#">초등 교재</a></li>
+                                    <li><a href="#">중등 교재</a></li>
+                                    <li><a href="#">고등 교재</a></li>
+                                    <li><a href="#">기타</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="mobile_main_link">
+                                    <span>교육서비스</span>
+                                    <em>03</em>
+                                </a>
+                                <ul class="mobile_sub">
+                                    <li><a href="#">아이챌린지</a></li>
+                                    <li><a href="#">NE Kids</a></li>
+                                    <li><a href="#">교과서</a></li>
+                                    <li><a href="#">학습서</a></li>
+                                    <li><a href="#">NE능률 주니어랩</a></li>
+                                    <li><a href="#">NE Times</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="mobile_main_link">
+                                    <span>선생님지원</span>
+                                    <em>04</em>
+                                </a>
+                                <ul class="mobile_sub">
+                                    <li><a href="#">수업 지원</a></li>
+                                    <li><a href="#">평가 지원</a></li>
+                                    <li><a href="#">교사 자료</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="mobile_main_link">
+                                    <span>홍보센터</span>
+                                    <em>05</em>
+                                </a>
+                                <ul class="mobile_sub">
+                                    <li><a href="#">보도자료</a></li>
+                                    <li><a href="#">사회공헌</a></li>
+                                    <li><a href="#">광고자료</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="mobile_utility">
+                        <a href="#">채용</a>
+                        <a href="#">IR</a>
+                        <a href="#">English</a>
+                    </div>
+                </div>
+            </div>
         </header>
         <main id="main">
-                <ul class="main_img">
-                    <li><a href=""><img src="./images/main_img.png" alt="" srcset=""></a></li>
-                    <li><a href=""><img src="./images/main_img2.png" alt="" srcset=""></a></li>
-                </ul>
-                <ul class="btn">
-                    <li class="on"><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
+            <ul class="main_img">
+                <li>
+                    <a href="#">
+                        <picture>
+                            <source
+                                media="(max-width: 768px)"
+                                srcset="./images/main_img_mobile.png"
+                            >
+                            <source
+                                media="(max-width: 1024px)"
+                                srcset="./images/main_img_tablet.png"
+                            >
+                            <img
+                                src="./images/main_img.png"
+                                data-fallback="./images/main_img.png"
+                                alt="NE능률 메인 비주얼"
+                            >
+                        </picture>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <picture>
+                            <source
+                                media="(max-width: 768px)"
+                                srcset="./images/main_img2_mobile.png"
+                            >
+                            <source
+                                media="(max-width: 1024px)"
+                                srcset="./images/main_img2_tablet.png"
+                            >
+                            <img
+                                src="./images/main_img2.png"
+                                data-fallback="./images/main_img2.png"
+                                alt="NE능률 두 번째 메인 비주얼"
+                            >
+                        </picture>
+                    </a>
+                </li>
+
+                <li class="btn_wrap">
+                    <ul class="btn">
+                        <li class="on"><a href="#" aria-label="첫 번째 슬라이드"></a></li>
+                        <li><a href="#" aria-label="두 번째 슬라이드"></a></li>
+                    </ul>
+                </li>
+            </ul>
         </main>
         <section id="contents">
             <article id="history">
@@ -318,8 +460,94 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="c_box c_box2"></div>
-                        <div class="c_box c_box3"></div>
+                        <div class="c_box c_box2">
+                            <div class="social_box sbox1">
+                                <span>01 교육 나눔</span>
+                                <h2>배움의 기회를 모두에게</h2>
+                                <p>교육 환경이 부족한 아동과 청소년에게<br>
+                                    교재와 학습 콘텐츠를 지원합니다.</p>
+                                <div class="social_circle">
+                                    <img src="./images/social_icon1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="social_box sbox2">
+                                <span>02 도서 기부</span>
+                                <h2>책으로 이어지는 따뜻한 나눔</h2>
+                                <p>지역아동센터와 교육기관에 학습 도서를 전달해<br>
+                                    아이들의 꾸준한 성장을 응원합니다.</p>
+                                <div class="social_circle">
+                                    <img src="./images/social_icon2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="social_box sbox3">
+                                <span>03 지역사회 동행</span>
+                                <h2>함께 성장하는 지역사회</h2>
+                                <p>임직원 봉사와 교육 지원 활동을 통해<br>
+                                    지역사회와 지속 가능한 가치를 만들어갑니다.</p>
+                                <div class="social_circle">
+                                    <img src="./images/social_icon3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c_box c_box3">
+                            <ul class="promotion_list">
+                                <li class="promotion_box">
+                                    <a href="#">
+                                        <div class="promotion_img">
+                                            <img src="./images/promotion1.png" alt="엘로이큐브 총판 계약 관련 이미지">
+                                        </div>
+
+                                        <div class="promotion_txt">
+                                            <p class="promotion_category">언론홍보</p>
+                                            <h5>지란지교에스엔씨 × 엘로이큐브 총판 계약</h5>
+                                            <time datetime="2026-05-15">2026-05-15</time>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="promotion_box">
+                                    <a href="#">
+                                        <div class="promotion_img">
+                                            <img src="./images/promotion2.png" alt="언론홍보 관련 이미지">
+                                        </div>
+
+                                        <div class="promotion_txt">
+                                            <p class="promotion_category">언론홍보</p>
+                                            <h5>지란지교에스엔씨 × 엘로이큐브 총판 계약</h5>
+                                            <time datetime="2026-05-15">2026-05-15</time>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="promotion_box">
+                                    <a href="#">
+                                        <div class="promotion_img">
+                                            <img src="./images/promotion3.png" alt="언론홍보 관련 이미지">
+                                        </div>
+
+                                        <div class="promotion_txt">
+                                            <p class="promotion_category">언론홍보</p>
+                                            <h5>지란지교에스엔씨 × 엘로이큐브 총판 계약</h5>
+                                            <time datetime="2026-05-15">2026-05-15</time>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="promotion_box">
+                                    <a href="#">
+                                        <div class="promotion_img">
+                                            <img src="./images/promotion4.png" alt="언론홍보 관련 이미지">
+                                        </div>
+
+                                        <div class="promotion_txt">
+                                            <p class="promotion_category">언론홍보</p>
+                                            <h5>지란지교에스엔씨 × 엘로이큐브 총판 계약</h5>
+                                            <time datetime="2026-05-15">2026-05-15</time>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
                     </div>
 
