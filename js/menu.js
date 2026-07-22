@@ -21,7 +21,7 @@ $(document).ready(function () {
         $subArea
             .stop(true, true)
             .show()
-            .animate({ height: 250 }, 200);
+            .animate({ height: 300 }, 200);
 
         $subMenus
             .stop(true, true)
