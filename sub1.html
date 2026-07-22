@@ -18,29 +18,59 @@
         <header id="header">
             <div class="header_in">
                 <div class="center_group">
-                    <h1 class="logo">
-                        <a href="./index.html">
-                            <img src="./images/로고.png" alt="NE능률">
-                        </a>
-                    </h1>
-
-                    <nav id="nav" aria-label="주요 메뉴">
+                    <h1 class="logo"><a href="./index.html"><img src="./images/로고.png" alt="로고이미지"></a></h1>
+                    <nav id="nav">
                         <ul>
-                            <li><a href="#">기업소개</a></li>
-                            <li><a href="#">출판 교재</a></li>
-                            <li><a href="#">교육서비스</a></li>
-                            <li><a href="#">선생님지원</a></li>
-                            <li><a href="#">홍보센터</a></li>
+                            <li>
+                                <a href="./sub1.html">기업소개</a>
+                                <ul class="sub">
+                                    <li><a href="#">인사말</a></li>
+                                    <li><a href="#">경영철학</a></li>
+                                    <li><a href="#">주요연혁</a></li>
+                                    <li><a href="#">CI</a></li>
+                                    <li><a href="#">위치안내</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">출판 교재</a>
+                                <ul class="sub">
+                                    <li><a href="#">초등 교재</a></li>
+                                    <li><a href="#">중등 교재</a></li>
+                                    <li><a href="#">고등 교재</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">교육서비스</a>
+                                <ul class="sub">
+                                    <li><a href="#">영유아 교육</a></li>
+                                    <li><a href="#">초·중·고 교육</a></li>
+                                    <li><a href="#">학습 솔루션</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">선생님지원</a>
+                                <ul class="sub">
+                                    <li><a href="#">수업 지원</a></li>
+                                    <li><a href="#">평가 지원</a></li>
+                                    <li><a href="#">교사 자료</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">홍보센터</a>
+                                <ul class="sub">
+                                    <li><a href="#">보도자료</a></li>
+                                    <li><a href="#">사회공헌</a></li>
+                                    <li><a href="#">광고자료</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
-
                 <ul class="info_mn">
                     <li><a href="#">채용</a></li>
                     <li><a href="#">IR</a></li>
                     <li><a href="#">English</a></li>
                 </ul>
-
                 <button
                     type="button"
                     class="hamburger_btn"
@@ -52,6 +82,8 @@
                     <span></span>
                     <span></span>
                 </button>
+            </div>
+            <div class="submn_area">
             </div>
 
             <div class="mobile_sitemap" id="mobileSitemap" aria-hidden="true">
@@ -74,15 +106,14 @@
                     <nav class="mobile_nav" aria-label="모바일 전체 메뉴">
                         <ul>
                             <li>
-                                <a href="#" class="mobile_main_link">
+                                <a href="./sub1.html" class="mobile_main_link">
                                     <span>기업소개</span>
                                     <em>01</em>
                                 </a>
                                 <ul class="mobile_sub">
                                     <li><a href="#">인사말</a></li>
-                                    <li><a href="#">경영철학</a></li>
-                                    <li><a href="#">주요연혁</a></li>
-                                    <li><a href="#">CI</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">CI 소개</a></li>
                                     <li><a href="#">위치안내</a></li>
                                 </ul>
                             </li>
@@ -96,6 +127,7 @@
                                     <li><a href="#">초등 교재</a></li>
                                     <li><a href="#">중등 교재</a></li>
                                     <li><a href="#">고등 교재</a></li>
+                                    <li><a href="#">기타</a></li>
                                 </ul>
                             </li>
 
@@ -105,9 +137,12 @@
                                     <em>03</em>
                                 </a>
                                 <ul class="mobile_sub">
-                                    <li><a href="#">영유아 교육</a></li>
-                                    <li><a href="#">초·중·고 교육</a></li>
-                                    <li><a href="#">학습 솔루션</a></li>
+                                    <li><a href="#">아이챌린지</a></li>
+                                    <li><a href="#">NE Kids</a></li>
+                                    <li><a href="#">교과서</a></li>
+                                    <li><a href="#">학습서</a></li>
+                                    <li><a href="#">NE능률 주니어랩</a></li>
+                                    <li><a href="#">NE Times</a></li>
                                 </ul>
                             </li>
 
@@ -144,8 +179,9 @@
                     </div>
                 </div>
             </div>
+        </header>
 
-            <main id="main">
+        <main id="main">
                 <div class="main_group">
                     <h4>기업소개</h4>
 
@@ -157,16 +193,15 @@
                 </div>
             </main>
 
-            <div id="mn_nav">
+        <div id="mn_nav">
                 <ul class="mn_list">
-                    <li><a href="#">인사말</a></li>
+                    <li><a href="#" class="active" aria-current="page">인사말</a></li>
                     <li><a href="#">경영철학</a></li>
                     <li><a href="#">주요연혁</a></li>
                     <li><a href="#">CI</a></li>
                     <li><a href="#">위치안내</a></li>
                 </ul>
             </div>
-        </header>
 
         <section id="sub_contents">
             <article id="greeting">
