@@ -1148,4 +1148,27 @@ body.menu-open{
         width: calc(100% - 32px);
     }
 }
+@media (max-width: 1024px){
+    #header .logo{
+        width: 105px;
+        flex-shrink: 0;
+    }
 
+    #header .logo img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px){
+    #header .logo{
+        width: 92px;
+    }
+}
+
+@media (max-width: 480px){
+    #header .logo{
+        width: 88px;
+    }
+}
