@@ -1,0 +1,181 @@
+/* =========================================================
+   NE 능률 — FOOTER
+========================================================= */
+
+#footer {
+    width: 100%;
+    background-color: #111;
+}
+
+#footer .footer_inner {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 100%;
+    max-width: 1600px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .logo {
+    width: 100px;
+    height: 40px;
+    background:url(../images/footer_logo.png) no-repeat 50% 0;
+    background-size: contain;
+}
+
+#footer .info {
+    width: 840px;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 2%;
+}
+
+#footer .customer {
+    width: 300px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#footer .customer h5 {
+    font-size: 18px;
+}
+
+#footer .customer p {
+    font-size: 14px;
+}
+
+#footer .customer h3 {
+    font-size: 24px;
+}
+
+
+#footer .family_site select {
+    width: 170px;
+    height: 45px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px;
+}
+
+#footer .family_site select option {
+    color: #000;
+}
+
+#footer .info ul {
+    display: flex;
+}
+
+#footer .info li a {
+    color: #fff;
+}
+
+#footer .info li::after {
+    content: "|";
+    font-size: 10px;
+    padding: 0 10px;
+}
+
+#footer .info li:last-child::after {
+    content: "";
+}
+
+#footer address {
+    padding-top: 20px;
+    font-style: normal;
+    box-sizing: border-box;
+}
+#footer .footer_inner {
+    width: min(
+        var(--content-width),
+        calc(100% - (var(--page-gutter) * 2))
+    );
+    max-width: none;
+}
+
+
+#footer .footer_inner {
+    gap: 32px;
+}
+
+
+@media (max-width: 1280px) {
+        #footer .footer_inner {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: start;
+
+    }
+
+
+        #footer .info {
+            width: auto;
+
+    }
+
+
+        #footer .customer,
+    #footer .family_site {
+            grid-column: 2;
+            width: auto;
+
+    }
+}
+
+
+@media (max-width: 768px) {
+        #footer .footer_inner {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 46px 0;
+            gap: 26px;
+
+    }
+
+
+        #footer .info,
+    #footer .customer {
+            width: 100%;
+            padding: 0;
+
+    }
+
+
+        #footer .info ul {
+            flex-wrap: wrap;
+            gap: 8px 0;
+
+    }
+
+
+        #footer .info li::after {
+            padding: 0 7px;
+
+    }
+
+
+        #footer address {
+            font-size: 12px;
+            line-height: 1.65;
+
+    }
+
+
+        #footer .family_site {
+            width: 100%;
+
+    }
+
+
+        #footer .family_site select {
+            width: 100%;
+
+    }
+}

@@ -1,0 +1,610 @@
+/* =========================================================
+   NE 능률 — HEADER / NAV / MOBILE SITEMAP
+========================================================= */
+
+#header {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#header .header_in {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1600px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.6% 0;
+    box-sizing: border-box;
+    
+}
+
+#header .center_group {
+    width: 80%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav {
+    width: min(720px, calc(100% - 150px));
+    min-width: 0;
+}
+
+#nav > ul {
+    display: flex;
+    justify-content: space-between;
+    gap:2vw;
+}
+
+#nav li {
+    margin-right: 20px;
+    position: relative;
+}
+
+#nav a {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#nav a:hover {
+    color: #E83828;
+}
+
+
+#header .info_mn {
+    display: flex;
+    gap: 10px;
+}
+
+#header .info_mn a {
+    font-size: 16px;
+}
+
+#header .hamburger_btn {
+    display: none;
+}
+
+#nav .sub {
+    position: absolute;
+    top: 300%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 160px;
+    padding-top: 20px;
+    text-align: center;
+    z-index: 200;
+}
+
+#nav .sub li {
+    padding: 10px 0;
+}
+
+#nav .sub li a {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.submn_area {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    border-top:1px solid #ccc;
+    border-radius: 0 0 50px 50px;
+}
+
+
+#header .header_in {
+    width: min(
+        var(--content-width),
+        calc(100% - (var(--page-gutter) * 2))
+    );
+    max-width: none;
+}
+
+
+@media (max-width: 1280px) {
+        #header .header_in {
+            padding: 28px 0;
+
+    }
+
+
+        #header .center_group {
+            width: 78%;
+
+    }
+
+
+        #nav {
+            width: min(620px, 58vw);
+
+    }
+
+
+        #nav a {
+            font-size: 17px;
+
+    }
+}
+
+
+@media (max-width: 1024px) {
+        #header .header_in {
+            min-height: 80px;
+            padding: 18px 0;
+            align-items: center;
+
+    }
+
+
+        #header .center_group {
+            width: auto;
+
+    }
+
+
+        #header .logo img {
+            width: clamp(118px, 18vw, 154px);
+
+    }
+
+
+        #header .info_mn,
+    #nav {
+            display: none;
+
+    }
+
+
+        #header .hamburger_btn {
+            display: block;
+            width: 28px;
+            height: 28px;
+
+    }
+}
+
+
+@media (max-width: 768px) {
+        #header .header_in {
+            min-height: 68px;
+            padding: 14px 0;
+
+    }
+
+
+        #header .logo img {
+            width: 118px;
+
+    }
+}
+
+
+/* ==================================================
+   HEADER CENTER ALIGN FIX
+   로고와 메뉴 사이 간격 확보 + 내비게이션 정중앙 배치
+================================================== */
+
+@media (min-width: 1025px) {
+        #header .header_in {
+            display: grid;
+            grid-template-columns:
+                minmax(150px, 1fr)
+                auto
+                minmax(150px, 1fr);
+            align-items: center;
+            column-gap: clamp(24px, 3vw, 52px);
+
+            padding-right: 0;
+            padding-left: 0;
+
+    }
+
+
+        /*
+           기존 center_group의 묶음을 풀어서
+           로고와 nav를 header_in의 그리드 항목으로 사용
+        */
+        #header .center_group {
+            display: contents;
+
+    }
+
+
+        #header .logo {
+            grid-column: 1;
+            justify-self: start;
+            margin: 0;
+
+    }
+
+
+        #nav {
+            grid-column: 2;
+            justify-self: center;
+
+            width: auto;
+            min-width: 0;
+
+    }
+
+
+        #nav > ul {
+            justify-content: center;
+            gap: clamp(30px, 3.2vw, 58px);
+
+    }
+
+
+        #nav li {
+            margin-right: 0;
+
+    }
+
+
+        #header .info_mn {
+            grid-column: 3;
+            justify-self: end;
+            margin: 0;
+
+    }
+}
+
+
+/* ==================================================
+   MOBILE SITEMAP
+================================================== */
+
+.hamburger_btn {
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+.hamburger_btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    border-radius: 999px;
+    background: #111;
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+
+.mobile_sitemap {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+        #header {
+            z-index: 1200;
+
+    }
+
+
+        #header .hamburger_btn {
+            position: relative;
+            z-index: 1300;
+            display: block;
+            width: 32px;
+            height: 32px;
+
+    }
+
+
+        #header .hamburger_btn img {
+            display: none;
+
+    }
+
+
+        .mobile_sitemap {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+
+            display: block;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+
+            background:
+                radial-gradient(
+                    circle at 100% 0,
+                    rgba(232, 56, 40, .1),
+                    transparent 35%
+                ),
+                #fff;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+
+            transition:
+                transform .55s cubic-bezier(.16, 1, .3, 1),
+                opacity .35s ease,
+                visibility .35s ease;
+
+    }
+
+
+        .mobile_sitemap.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+
+    }
+
+
+        .mobile_sitemap_inner {
+            width: min(100%, 720px);
+            min-height: 100%;
+            margin: 0 auto;
+            padding:
+                22px
+                clamp(20px, 6vw, 48px)
+                36px;
+
+    }
+
+
+        .mobile_sitemap_top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+    }
+
+
+        .mobile_logo img {
+            display: block;
+            width: clamp(116px, 25vw, 150px);
+
+    }
+
+
+        .mobile_close_btn {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+
+    }
+
+
+        .mobile_close_btn span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 27px;
+            height: 2px;
+            border-radius: 999px;
+            background: #111;
+
+    }
+
+
+        .mobile_close_btn span:first-child {
+            transform: translate(-50%, -50%) rotate(45deg);
+
+    }
+
+
+        .mobile_close_btn span:last-child {
+            transform: translate(-50%, -50%) rotate(-45deg);
+
+    }
+
+
+        .mobile_nav {
+            margin-top: clamp(54px, 11vh, 100px);
+
+    }
+
+
+        .mobile_nav > ul > li {
+            border-bottom: 1px solid #e7e7e7;
+
+            opacity: 0;
+            transform: translateY(22px);
+
+            transition:
+                opacity .55s ease,
+                transform .65s cubic-bezier(.16, 1, .3, 1);
+
+    }
+
+
+        .mobile_sitemap.is-open .mobile_nav > ul > li {
+            opacity: 1;
+            transform: translateY(0);
+
+    }
+
+
+        .mobile_sitemap.is-open .mobile_nav > ul > li:nth-child(1) {
+            transition-delay: .08s;
+
+    }
+
+
+        .mobile_sitemap.is-open .mobile_nav > ul > li:nth-child(2) {
+            transition-delay: .13s;
+
+    }
+
+
+        .mobile_sitemap.is-open .mobile_nav > ul > li:nth-child(3) {
+            transition-delay: .18s;
+
+    }
+
+
+        .mobile_sitemap.is-open .mobile_nav > ul > li:nth-child(4) {
+            transition-delay: .23s;
+
+    }
+
+
+        .mobile_sitemap.is-open .mobile_nav > ul > li:nth-child(5) {
+            transition-delay: .28s;
+
+    }
+
+
+        .mobile_main_link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0 14px;
+
+            font-size: clamp(27px, 7vw, 42px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -.04em;
+            color: #111;
+
+    }
+
+
+        .mobile_main_link em {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: .08em;
+            color: var(--point-color, #E83828);
+
+    }
+
+
+        .mobile_sub {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px 18px;
+            padding: 0 0 20px;
+
+    }
+
+
+        .mobile_sub a {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #777;
+
+    }
+
+
+        .mobile_utility {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            margin-top: 34px;
+            padding-top: 22px;
+            border-top: 1px solid #111;
+
+    }
+
+
+        .mobile_utility a {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+
+    }
+}
+
+
+@media (max-width: 480px) {
+        .mobile_sitemap_inner {
+            padding-top: 18px;
+
+    }
+
+
+        .mobile_nav {
+            margin-top: 48px;
+
+    }
+
+
+        .mobile_main_link {
+            padding-top: 17px;
+            font-size: 30px;
+
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+        .mobile_sitemap,
+    .mobile_nav > ul > li {
+            transition: none !important;
+
+    }
+}
+
+
+/* 모바일에서 데스크톱 드롭다운 배경 제거 */
+@media (max-width: 1024px) {
+        #header .submn_area,
+    #header #nav .sub {
+            display: none !important;
+            height: 0 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+
+    }
+}
+
+@media (max-width: 1024px) {
+        #header .logo {
+            width: 105px;
+            flex-shrink: 0;
+
+    }
+
+
+        #header .logo img {
+            display: block;
+            width: 100%;
+            height: auto;
+
+    }
+}
+
+
+@media (max-width: 768px) {
+        #header .logo {
+            width: 92px;
+
+    }
+}
+
+
+@media (max-width: 480px) {
+        #header .logo {
+            width: 88px;
+
+    }
+}
